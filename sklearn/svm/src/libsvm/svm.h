@@ -118,7 +118,7 @@ struct svm_csr_model
 				/* 0 if svm_model is created by svm_train */
 };
 
-
+/* Dense functions under svm_ prefix are defined by libsvm_template.cpp from generate versions in  svm.cpp */
 struct svm_model *svm_train(const struct svm_problem *prob, const struct svm_parameter *param, int *status, BlasFunctions *blas_functions);
 void svm_cross_validation(const struct svm_problem *prob, const struct svm_parameter *param, int nr_fold, double *target, BlasFunctions *blas_functions);
 
@@ -144,7 +144,7 @@ void svm_set_print_string_function(void (*print_func)(const char *));
 
 
 /* sparse version */
-
+/* Sparse functions under svm_csr_ prefix are defined by libsvm_template.cpp from generate versions in  svm.cpp */
 struct svm_csr_model *svm_csr_train(const struct svm_csr_problem *prob, const struct svm_parameter *param, int *status, BlasFunctions *blas_functions);
 void svm_csr_cross_validation(const struct svm_csr_problem *prob, const struct svm_parameter *param, int nr_fold, double *target, BlasFunctions *blas_functions);
 
